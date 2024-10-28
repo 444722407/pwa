@@ -3,18 +3,6 @@
     "short_name": "FunShort",
     "start_url": "./",
     "display": "standalone",
-    "background_color": "#ffffff",
-    "lang": "en",
-    "theme_color": "#3d1702",
-    "screenshots": [
-      {
-       "src": "./image1.png",
-        "sizes": "640x320",
-          "type": "image/png",
-          "form_factor": "wide",
-          "label": "Wonder Widgets"
-        }
-    ],
     "icons": [
       {
         "src": "./pwa-512x512.png",
