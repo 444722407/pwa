@@ -3,25 +3,30 @@
 
 <head>
     <link rel="manifest" href="./manifest.json" />
-    <!-- ... -->
+    <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
+    <script>
+    // VConsole 默认会挂载到 `window.VConsole` 上
+    var vConsole = new window.VConsole();
+    </script>
 </head>
 
 <body>
     <h1>pwa</h1>
-    <button id="install" hidden>Install</button>
+    <button id="install" >Install</button>
     <script>
         let installPrompt = null;
         const installButton = document.querySelector("#install");
 
         window.addEventListener("beforeinstallprompt", (event) => {
-
+            console.log(event)
             event.preventDefault();
             installPrompt = event;
-            installButton.removeAttribute("hidden");
+            // installButton.removeAttribute("hidden");
 
         });
-
+      
         installButton.addEventListener("click", async () => {
+            console.log(installPrompt)
             if (!installPrompt) {
                 return;
             }
