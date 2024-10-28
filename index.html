@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link rel="manifest" href="manifest.json" />
+    <!-- ... -->
+</head>
+
+<body>
+    <h1>pwa</h1>
+    <button id="install" hidden>Install</button>
+    <script>
+        let installPrompt = null;
+        const installButton = document.querySelector("#install");
+
+        window.addEventListener("beforeinstallprompt", (event) => {
+
+            event.preventDefault();
+            installPrompt = event;
+            installButton.removeAttribute("hidden");
+
+        });
+
+        installButton.addEventListener("click", async () => {
+            if (!installPrompt) {
+                return;
+            }
+            const result = await installPrompt.prompt();
+            console.log(`Install prompt was: ${result.outcome}`);
+            //方式一
+            if(result.outcome == 'accepted'){
+                console.log("成功");
+            }else{
+                console.log("安装失败");
+            }
+           //方式二
+            installPrompt.userChoice.then((choiceResult) => {
+                if (choiceResult.outcome === "accepted") {
+                    console.log("成功");
+                } else {
+                    console.log("安装失败");
+                }
+            });
+
+
+            disableInAppInstallPrompt();
+            function disableInAppInstallPrompt() {
+                installPrompt = null;
+                installButton.setAttribute("hidden", "");
+            }
+        }) 
+    </script>
+</body>
+
+</html>
