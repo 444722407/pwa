@@ -1,5 +1,6 @@
 {
     "name": "My PWA",
+    "short_name": "My PWA",
     "start_url": "./",
     "display": "standalone",
     "icons": [
@@ -7,6 +8,11 @@
         "src": "./pwa-512x512.png",
         "type": "image/png",
         "sizes": "512x512"
+      },
+      {
+        "src": "./pwa-192x192.png",
+        "type": "image/png",
+        "sizes": "192x192"
       }
     ]
   }
