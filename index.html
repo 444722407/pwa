@@ -8,16 +8,16 @@
 
 <body>
     <h1>pwa</h1>
-    <button id="install">Install</button>
+    <button id="install" hidden>Install</button>
     <script>
         let installPrompt = null;
         const installButton = document.querySelector("#install");
 
         window.addEventListener("beforeinstallprompt", (event) => {
- 
-            // event.preventDefault(); 
+
+            event.preventDefault();
             installPrompt = event;
-            // installButton.removeAttribute("hidden");
+            installButton.removeAttribute("hidden");
 
         });
 
@@ -51,5 +51,5 @@
         }) 
     </script>
 </body>
- 
+
 </html>
