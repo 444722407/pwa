@@ -1,0 +1,23 @@
+{
+    "name": "demo11111111",
+    "short_name": "ManifestDemo",
+    "display": "standalone",
+    "theme_color": "red",
+    "background_color": "silver",
+    "start_url": "./",
+    "id": "demo-1",
+    "scope": "./",
+    "icons": [
+       {
+          "src": "https://cdn.glitch.me/248b0d2d-8ab9-4407-a073-136440ab3556/icon.png?v=1640879741758",
+          "type": "image/png",
+          "sizes": "512x512"
+       },
+       {
+          "src": "https://cdn.glitch.me/248b0d2d-8ab9-4407-a073-136440ab3556/icon.png?v=1640879741758",
+          "type": "image/png",
+          "sizes": "512x512",
+          "purpose": "maskable" 
+       }
+     ]  
+  }
